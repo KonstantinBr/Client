@@ -19,8 +19,7 @@ namespace Client
         public Form1()
         {
             InitializeComponent();
-            //memoApi = RestService.For<IMemoAPI>(ConfigurationSettings.AppSettings["MemoApiURL"]);
-            //UpdateAllMemoList().Wait();
+            memoApi = RestService.For<IMemoAPI>(ConfigurationSettings.AppSettings["MemoApiURL"]);
         }
 
         async Task UpdateAllMemoList()
@@ -31,21 +30,22 @@ namespace Client
             foreach(var memo in memoResponses)
             {
                 AllMemosGridView.Rows.Add();
-                AllMemosGridView[rowIndex, 0].Value = memo.Id;
-                AllMemosGridView[rowIndex, 1].Value = memo.SubjectName;
-                AllMemosGridView[rowIndex, 2].Value = memo.LectureHours;
-                AllMemosGridView[rowIndex, 3].Value = memo.LabHours;
-                AllMemosGridView[rowIndex, 4].Value = controlTupeToString(memo.ControlType);
-                AllMemosGridView[rowIndex, 5].Value = memo.StudentsCount;
+                AllMemosGridView[0, rowIndex].Value = memo.Id;
+                AllMemosGridView[1, rowIndex].Value = memo.SubjectName;
+                AllMemosGridView[2, rowIndex].Value = memo.LectureHours;
+                AllMemosGridView[3, rowIndex].Value = memo.LabHours;
+                AllMemosGridView[4, rowIndex].Value = controlTupeToString(memo.ControlType);
+                AllMemosGridView[5, rowIndex].Value = memo.StudentsCount;
+                rowIndex++;
             }
         }
 
         string controlTupeToString(int type)
         {
             if (type == 1)
-                return "Экзамен";
-            else
                 return "Зачет";
+            else
+                return "Экзамен";
         }
 
         string getControlType()
@@ -140,12 +140,13 @@ namespace Client
             foreach (var memo in memoResponses)
             {
                 RangeGridView.Rows.Add();
-                RangeGridView[rowIndex, 0].Value = memo.Id;
-                RangeGridView[rowIndex, 1].Value = memo.SubjectName;
-                RangeGridView[rowIndex, 2].Value = memo.LectureHours;
-                RangeGridView[rowIndex, 3].Value = memo.LabHours;
-                RangeGridView[rowIndex, 4].Value = controlTupeToString(memo.ControlType);
-                RangeGridView[rowIndex, 5].Value = memo.StudentsCount;
+                RangeGridView[0, rowIndex].Value = memo.Id;
+                RangeGridView[1, rowIndex].Value = memo.SubjectName;
+                RangeGridView[2, rowIndex].Value = memo.LectureHours;
+                RangeGridView[3, rowIndex].Value = memo.LabHours;
+                RangeGridView[4, rowIndex].Value = controlTupeToString(memo.ControlType);
+                RangeGridView[5, rowIndex].Value = memo.StudentsCount;
+                rowIndex++;
             }
         }
     }
