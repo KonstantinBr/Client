@@ -487,6 +487,7 @@
             this.MinimumSize = new System.Drawing.Size(1167, 864);
             this.Name = "Form1";
             this.Text = "Заметки преподавателю";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AllMemosGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);

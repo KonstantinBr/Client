@@ -34,5 +34,10 @@ namespace Client
                 ReportrichTextBox.Text += "Название: " + lec.SubjectName + " число студентов: " + lec.StudentsCount + "\n";
             }
         }
+
+        private void HeadForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -57,5 +57,10 @@ namespace Client
             SubjectlistBox.Items.Clear();
             SubjectlistBox.Items.AddRange(subjects.Select(x=>x.Name).ToArray());
         }
+
+        private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

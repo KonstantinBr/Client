@@ -59,6 +59,7 @@
             this.Controls.Add(this.label1);
             this.Name = "HeadForm";
             this.Text = "HeadForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HeadForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
